@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-08-18 21:46:53
+Date: 2018-08-18 23:51:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -273,12 +273,18 @@ CREATE TABLE `menu` (
   PRIMARY KEY (`id`),
   KEY `parent` (`parent`),
   CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `menu` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of menu
 -- ----------------------------
-INSERT INTO `menu` VALUES ('2', 'ffffffffffffffffff', null, null, null, null);
+INSERT INTO `menu` VALUES ('3', '首页', null, '/site/index', null, null);
+INSERT INTO `menu` VALUES ('4', 'gii', null, '', null, null);
+INSERT INTO `menu` VALUES ('5', 'gii-view', '4', '/gii/default/view', null, null);
+INSERT INTO `menu` VALUES ('6', 'gii-index', '4', '/gii/default/index', null, null);
+INSERT INTO `menu` VALUES ('7', 'debug', null, null, null, null);
+INSERT INTO `menu` VALUES ('8', 'debug-index', '7', '/debug/default/index', null, null);
+INSERT INTO `menu` VALUES ('9', 'debug-view', '7', '/debug/default/view', null, null);
 
 -- ----------------------------
 -- Table structure for user
